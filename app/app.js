@@ -52,7 +52,7 @@ const PrintTaskActive = ()=>{
     row += "</div>";
     container.innerHTML = row;
 }
-/** funciones */
+/** funciones de inicio */
 
 function nueva_tarea(){
     let task = document.getElementById("task").value;
