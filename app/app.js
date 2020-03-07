@@ -41,7 +41,9 @@ const PrintTaskActive = ()=>{
                     <button type = "button" class = "btn btn-info">
                         Completar
                     </button>
-                    <button type = "button" class = "btn btn-danger">
+                    <button type = "button" 
+                    onClick="elimina_tarea(${element.id})" 
+                    class = "btn btn-danger">
                         Eliminar
                     </button>
                 </div>
@@ -53,6 +55,14 @@ const PrintTaskActive = ()=>{
     container.innerHTML = row;
 }
 /** funciones de inicio */
+
+function elimina_tarea(id=0) {
+    let opt = confirm("Desea quitar este elemento? ");
+    if (opt === true) {
+        app.delete_id(id);
+        PrintTaskActive();
+    }
+}
 
 function nueva_tarea(){
     let task = document.getElementById("task").value;
